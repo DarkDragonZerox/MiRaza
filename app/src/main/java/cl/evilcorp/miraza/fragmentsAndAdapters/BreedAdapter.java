@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
+import cl.evilcorp.miraza.databinding.ItemListBreedBinding;
+
 public class BreedAdapter extends RecyclerView.Adapter<BreedAdapter.BreedAdapterVH>{
     private List<String> breedList;
     private OnItemClickListener listener;
@@ -48,14 +50,14 @@ public class BreedAdapter extends RecyclerView.Adapter<BreedAdapter.BreedAdapter
     @Override
     public BreedAdapter.BreedAdapterVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         binding=ItemListBreedBinding.inflate(LayoutInflater.from(parent.getContext()),parent, false);
-        View view=binding.getRoot;
+        View view=binding.getRoot();
         return new BreedAdapterVH(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull BreedAdapter.BreedAdapterVH holder, int position) {
         String breed= breedList.get(position);
-        holder.bind(breed)
+        holder.bind(breed);
     }
 
     @Override
@@ -77,7 +79,7 @@ public class BreedAdapter extends RecyclerView.Adapter<BreedAdapter.BreedAdapter
         @Override
         public void onClick(View view) {
             int position=getAdapterPosition();
-            listener.onClick(position)
+            listener.onClick(position);
 
         }
     }
