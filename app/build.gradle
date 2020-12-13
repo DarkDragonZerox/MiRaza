@@ -29,6 +29,7 @@ android {
 }
 
 dependencies {
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
     def retro_version = "2.9.0"
     def logging_version = "4.9.0"
     implementation "com.squareup.retrofit2:retrofit:$retro_version"

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Mi Raza</string>
+    <string name="view_favorites" />
+    <string name="textView3" />
 </resources>
