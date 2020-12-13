@@ -1,8 +1,10 @@
-package cl.evilcorp.miraza;
+package cl.evilcorp.miraza.fragmentsAndAdapters;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import cl.evilcorp.miraza.R;
 
 public class MainActivity extends AppCompatActivity {
 

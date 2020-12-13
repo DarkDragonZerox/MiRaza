@@ -1,4 +1,4 @@
-package cl.evilcorp.miraza;
+package cl.evilcorp.miraza.fragmentsAndAdapters;
 
 import android.os.Bundle;
 
@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import cl.evilcorp.miraza.R;
 
 /**
  * A simple {@link Fragment} subclass.
