@@ -49,7 +49,7 @@ public class BreedModel {
         });
     }
 
-    public void loadBreedPictures(String pBreed) {
+    public void loadBreedImg(String pBreed) {
         RetrofitClient.getRetrofitInstance().getBreedDetail(pBreed).enqueue(new Callback<BreedImg>() {
             @Override
             public void onResponse(Call<BreedImg> call, Response<BreedImg> response) {

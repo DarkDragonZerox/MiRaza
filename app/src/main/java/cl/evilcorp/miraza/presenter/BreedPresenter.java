@@ -9,17 +9,17 @@ import cl.evilcorp.miraza.model.IBreedModel;
 
 public class BreedPresenter implements IBreedModel {
 
-    private IBreedPresenterView viewBreed;
+    private IBreedPresenter viewBreed;
     private BreedModel breedModel;
 
-    public BreedPresenter(IBreedPresenterView viewBreed, BreedModel breedModel) {
+    public BreedPresenter(IBreedPresenter viewBreed, BreedModel breedModel) {
         this.viewBreed = viewBreed;
         this.breedModel=breedModel;
 
         breedModel.setBreedPresenter(this);
 
         breedModel.loadBreedList();
-        breedModel.getFavorites();
+
     }
 
 
