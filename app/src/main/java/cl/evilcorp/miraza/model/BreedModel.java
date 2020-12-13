@@ -3,6 +3,7 @@ package cl.evilcorp.miraza.model;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import cl.evilcorp.miraza.presenter.BreedPresenter;
@@ -17,11 +18,11 @@ public class BreedModel {
     private BreedPresenter breedPresenter;
     private ImgPresenter imgPresenter;
 
-    private List<String> breedImage= new ArrayList<>();
+    private List<String> breedImage = new ArrayList<>();
 
 
     public void setImgPresenter(ImgPresenter imgPresenter) {
-        this.imgPresenter=imgPresenter;
+        this.imgPresenter = imgPresenter;
     }
 
 
@@ -34,7 +35,7 @@ public class BreedModel {
         RetrofitClient.getRetrofitInstance().getAllBreeds().enqueue(new Callback<Breed>() {
             @Override
             public void onResponse(Call<Breed> call, Response<Breed> response) {
-                                List<String> breeds = new ArrayList<String>();
+                List<String> breeds = new ArrayList<String>();
                 breeds.addAll(response.body().getMessage().keySet());
                 breedPresenter.showBreed(breeds);
 
@@ -53,9 +54,8 @@ public class BreedModel {
         RetrofitClient.getRetrofitInstance().getBreedDetail(pBreed).enqueue(new Callback<BreedImg>() {
             @Override
             public void onResponse(Call<BreedImg> call, Response<BreedImg> response) {
-          breedImage.addAll(response.body().getMessage());
-
-               ImgPresenter.showBreed(breedImage);
+                breedImage.addAll(Collections.singleton(response.body().getMessage().toString()));
+                imgPresenter.showBreed(breedImage);
             }
 
             @Override

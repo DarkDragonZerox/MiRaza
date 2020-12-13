@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Breed {
-    private Map<String, List<String>> message ;
+    private Map<String, List<String>> message;
     private String status;
 
     public Breed(Map<String, List<String>> message, String status) {

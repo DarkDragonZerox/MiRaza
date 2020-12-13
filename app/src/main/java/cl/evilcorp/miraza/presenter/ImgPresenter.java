@@ -5,7 +5,7 @@ import java.util.List;
 import cl.evilcorp.miraza.model.BreedModel;
 import cl.evilcorp.miraza.model.IBreedModel;
 
-public class ImgPresenter  implements IBreedModel {
+public class ImgPresenter implements IBreedModel {
     private IBreedPresenter viewImg;
     private BreedModel breedModel;
     private String breed;
@@ -21,6 +21,6 @@ public class ImgPresenter  implements IBreedModel {
 
     @Override
     public void showBreed(List<String> breeds) {
-        viewImg.showBreed(breeds)
+        viewImg.showBreed(breeds);
     }
 }
