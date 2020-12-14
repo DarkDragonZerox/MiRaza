@@ -7,4 +7,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="breed_Img" />
     <string name="ImgTitle">\"Lista de imagenes Para las Razas \"</string>
+    <string name="Bienvenido..">text</string>
+    <string name="bienvenido">Bienvenido</string>
 </resources>

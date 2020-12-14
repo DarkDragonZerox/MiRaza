@@ -15,9 +15,7 @@ public class BreedPresenter implements IBreedModel {
     public BreedPresenter(IBreedPresenter viewBreed, BreedModel breedModel) {
         this.viewBreed = viewBreed;
         this.breedModel=breedModel;
-
         breedModel.setBreedPresenter(this);
-
         breedModel.loadBreedList();
 
     }
@@ -25,6 +23,6 @@ public class BreedPresenter implements IBreedModel {
 
     @Override
     public void showBreed(List<String> breeds) {
-
+        viewBreed.showBreed(breeds);
     }
 }

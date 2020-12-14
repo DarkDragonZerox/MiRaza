@@ -26,27 +26,7 @@ public class BreedAdapter extends RecyclerView.Adapter<BreedAdapter.BreedAdapter
         return breedList;
     }
 
-    public void setBreedList(List<String> breedList) {
-        this.breedList = breedList;
-    }
-
-    public OnItemClickListener getListener() {
-        return listener;
-    }
-
-    public void setListener(OnItemClickListener listener) {
-        this.listener = listener;
-    }
-
-    public ItemListBreedBinding getBinding() {
-        return binding;
-    }
-
-    public void setBinding(ItemListBreedBinding binding) {
-        this.binding = binding;
-    }
-
-    @NonNull
+     @NonNull
     @Override
     public BreedAdapter.BreedAdapterVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         binding=ItemListBreedBinding.inflate(LayoutInflater.from(parent.getContext()),parent, false);
@@ -65,6 +45,12 @@ public class BreedAdapter extends RecyclerView.Adapter<BreedAdapter.BreedAdapter
         return breedList.size();
     }
 
+    public void UpdateBreed(List<String> breeds) {
+        breedList.clear();
+        breedList.addAll(breeds);
+        notifyDataSetChanged();
+    }
+
     public class BreedAdapterVH extends RecyclerView.ViewHolder implements View.OnClickListener  {
         private TextView tvBreed;
 
@@ -77,7 +63,7 @@ public class BreedAdapter extends RecyclerView.Adapter<BreedAdapter.BreedAdapter
             tvBreed.setText(breed.toUpperCase());
         }
         @Override
-        public void onClick(View view) {
+        public void onClick(View v) {
             int position=getAdapterPosition();
             listener.onClick(position);
 

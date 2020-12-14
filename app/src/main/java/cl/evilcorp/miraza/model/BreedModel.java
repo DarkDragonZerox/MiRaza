@@ -14,14 +14,14 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class BreedModel {
-    private static final String TAG = "InfoLog";
+
     private BreedPresenter breedPresenter;
     private ImgPresenter imgPresenter;
-
     private List<String> breedImage = new ArrayList<>();
 
 
     public void setImgPresenter(ImgPresenter imgPresenter) {
+
         this.imgPresenter = imgPresenter;
     }
 
@@ -43,7 +43,6 @@ public class BreedModel {
 
             @Override
             public void onFailure(Call<Breed> call, Throwable t) {
-                Log.d(TAG, "onFailure: Fallo de Conexión" + t.toString());
 
 
             }
@@ -54,7 +53,7 @@ public class BreedModel {
         RetrofitClient.getRetrofitInstance().getBreedDetail(pBreed).enqueue(new Callback<BreedImg>() {
             @Override
             public void onResponse(Call<BreedImg> call, Response<BreedImg> response) {
-                breedImage.addAll(Collections.singleton(response.body().getMessage().toString()));
+                breedImage.addAll(response.body().getMessage());
                 imgPresenter.showBreed(breedImage);
             }
 

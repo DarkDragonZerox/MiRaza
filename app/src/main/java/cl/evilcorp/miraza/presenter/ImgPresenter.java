@@ -2,6 +2,7 @@ package cl.evilcorp.miraza.presenter;
 
 import java.util.List;
 
+import cl.evilcorp.miraza.fragmentsAndAdapters.ImageFragment;
 import cl.evilcorp.miraza.model.BreedModel;
 import cl.evilcorp.miraza.model.IBreedModel;
 

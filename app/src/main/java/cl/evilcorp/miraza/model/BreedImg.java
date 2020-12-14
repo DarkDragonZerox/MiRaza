@@ -1,31 +1,20 @@
 package cl.evilcorp.miraza.model;
 
 import java.util.List;
-import java.util.Map;
+
 
 public class BreedImg {
-    private Map<String, List<String>> message ;
+    private List<String> message;
     private String status;
 
-    public BreedImg(Map<String, List<String>> message, String status) {
+    public BreedImg(List<String> message, String status) {
         this.message = message;
         this.status = status;
 
     }
 
-    public Map<String, List<String>> getMessage() {
+    public List<String> getMessage() {
         return message;
     }
 
-    public void setMessage(Map<String, List<String>> message) {
-        this.message = message;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
 }
